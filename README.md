@@ -3,7 +3,7 @@
 > See the $ impact of every Terraform change right in the PR, before you merge.
 
 [![ci](https://github.com/moveeeax/tf-cost-diff/actions/workflows/ci.yml/badge.svg)](https://github.com/moveeeax/tf-cost-diff/actions/workflows/ci.yml)
-![python](https://img.shields.io/badge/python-3.10%2B-blue)
+![python](https://img.shields.io/badge/python-3.11%2B-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
 A tiny, dependency-free GitHub Action (and CLI) that reads a `terraform plan`,
@@ -23,7 +23,7 @@ pull request. Optionally fails the check when the delta crosses a threshold.
 ## CLI
 
 ```bash
-pip install tf-cost-diff
+pip install git+https://github.com/moveeeax/tf-cost-diff
 
 terraform plan -out tf.plan
 terraform show -json tf.plan > plan.json
@@ -51,7 +51,7 @@ Example output:
 permissions:
   pull-requests: write
 steps:
-  - uses: hashicorp/setup-terraform@v3
+  - uses: hashicorp/setup-terraform@v4
   - run: |
       terraform plan -out tf.plan
       terraform show -json tf.plan > plan.json
