@@ -136,3 +136,7 @@ pytest
 ## License
 
 MIT
+
+---
+
+**Archived on 2026-11-05.** Infracost already posts Terraform cost diffs on PRs for AWS, Azure and GCP across 1,100+ resources, with usage files. tf-cost-diff prices 6 AWS types from a hard-coded us-east-1 sheet. Its only angle is "no external pricing API, dependency-free", which matters only to air-gapped teams. Keep it only if the features below, which build that angle, are taken on.
